@@ -12,6 +12,7 @@ void gameOver() {
   state = 2;
   gameOver = true;
   background(255, 0, 0);
+  fill(0);
   textAlign(CENTER, CENTER);
   text("GAME OVER", width / 2, height / 2);
   text("Score: " + int(distanceTraveled), width / 2, (height + d) / 2);

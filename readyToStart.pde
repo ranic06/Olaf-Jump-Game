@@ -1,4 +1,10 @@
 void readyToStart() {
+  gameOver = false;
+  elapsedTime = 0;
+  score = 0;
+  treeSpeed = 0;
+  distanceTraveled = 0;
+
   background(0, 191, 255);
   fill(255);
   rectMode(CENTER);

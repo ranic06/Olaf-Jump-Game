@@ -29,10 +29,8 @@ void playing() {
     if (w[i]>height) w[i] = 0;
   }
 
-  trees();
   update();
   gio();
   sun();
   cloud();
-  collipse();
 }

@@ -19,7 +19,6 @@ int c = 0;
 int elapsedTime = 0;
 int nJump = 0;
 int distanceTraveled = 0;
-boolean gameStarted = false;
 boolean gameOver = false;
 int score = 0;
 int state = 0;
@@ -28,6 +27,7 @@ int state = 0;
 // 3. gameover
 // 4. retry
 float w2, h2;
+boolean paused = false;
 
 void setup() {
   size(1500, 800);
@@ -60,22 +60,21 @@ void draw() {
     readyToStart();
   } else if (state == 1) { // 2. playing
     playing();
+    trees();
+    collipse();
   } else if (state == 2) { // 3. gameover
     retry();
-  } else if (state == 3) { // 4. retry
-  }
-}
-
-void keyPressed() {
-  if (key == ' ') {
-    if (nJump < 2) {
-      nJump++;
-      ySpeed = jumpSpeed;
-    }
   }
 }
 
 void mousePressed() {
+    if (nJump < 2) {
+      nJump++;
+      ySpeed = jumpSpeed;
+    }
+}
+
+void mouseReleased() {
   if (state == 0) { // 1. ready to restart
     if (mouseX>w2-50 && mouseX<w2+50 && mouseY>h2-50 && mouseY<h2+50) {
       state = 1;
